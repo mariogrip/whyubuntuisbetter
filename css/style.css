@@ -1,0 +1,13 @@
+.itemName {
+    text-align: center;   
+}
+
+.itemImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.panels {
+    min-height: 440px
+}
