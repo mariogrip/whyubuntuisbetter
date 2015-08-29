@@ -17,8 +17,8 @@
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
     <link href="css/ubuntu.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -95,7 +95,7 @@
         <div ng-repeat="item in items" class="col-md-3">
           <div class="panel panel-default panels">
             <div class="panel-body">
-                <h2 class="itemName">{{item.name}}</h2>
+                <h2 class="itemName">{{item.title}}</h2>
 
                 <img class="itemImage" ng-if="item.img" ng-src="{{item.img}}" class="img-rounded"/>
                 <p>{{item.text}}</p>
@@ -108,14 +108,14 @@
         <div ng-repeat="(num, item) in items" class="col-md-3">
           <div class="panel panel-default">
             <div class="panel-body"><i style="color: red;" ng-click="removeItem(nums, num);" class="fa fa-times-circle-o fa-lg pull-right"></i><img ng-if="item.img" ng-src="{{item.img}}" class="img-rounded"/>
-              <input value="{{item.name}}"/>
+              <input value="{{item.title}}"/>
             </div>
           </div>
         </div>
         <div ng-if="hadMoreAtEnd() &amp;&amp; $last" class="col-md-3">
           <div class="panel panel-default">
             <div class="panel-body"><i style="color: green;" ng-click="newItem()" class="fa fa-plus-circle fa-lg"></i>
-              <input ng-model="$parent.new.name"/>
+              <input ng-model="$parent.new.title"/>
             </div>
           </div>
         </div>
@@ -124,7 +124,7 @@
         <div ng-if="!hadMoreAtEnd()" class="col-md-3">
           <div class="panel panel-default">
             <div class="panel-body"><i style="color: green;" ng-click="newItem()" class="fa fa-plus-circle fa-lg"></i>
-              <input ng-model="new.name"/>
+              <input ng-model="new.title"/>
             </div>
           </div>
         </div>

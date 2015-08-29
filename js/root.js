@@ -29,8 +29,8 @@ app.controller("ctrl", ['$scope', '$http', function($scope, $http) {
         $scope.itemList.push([]);
         num += 1;
       }
-      $scope.itemList[num].push({name: $scope.new.name});
-      $scope.new.name = "";
+      $scope.itemList[num].push({title: $scope.new.title});
+      $scope.new.title = "";
     }
     $scope.hadMoreAtEnd = function(){
       var num = angular.copy($scope.itemList.length)-1;

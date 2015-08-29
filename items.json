@@ -1,28 +1,28 @@
 {
   "items": [
     {
-      "name": "Forget about viruses",
+      "title": "Forget about viruses",
       "img": "http://www.whylinuxisbetter.net/items/viruses/Images/xviruses_thumb_smaller.png.pagespeed.ic.1k7PdS8e38.png",
         "text": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
     },
     {
-      "name": "Is your system unstable?",
+      "title": "Is your system unstable?",
         "text":  "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
     },
     {
-      "name": "Linux protects your computer"
+      "title": "Linux protects your computer"
     },
     {
-      "name": "Don't pay $100 for your operating system"
+      "title": "Don't pay $100 for your operating system"
     },
     {
-      "name": "No more crapware"
+      "title": "No more crapware"
     },
     {
-      "name": "Freedom!"
+      "title": "Freedom!"
     },
     {
-      "name": "Forget about drivers"
+      "title": "Forget about drivers"
     }
   ]
 }
