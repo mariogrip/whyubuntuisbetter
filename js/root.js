@@ -38,3 +38,16 @@ app.controller("ctrl", ['$scope', '$http', function($scope, $http) {
     }
   });
 }]);
+
+app.directive('u-repeat', function() {
+  return function(scope, element, attrs) {
+    var hei = document.getElementById(scope.num + "h").style.height
+    document.getElementById(scope.num + "t").style.height = 440 - hei;
+  };
+})
+
+app.filter('to_trusted', ['$sce', function($sce){
+        return function(text) {
+            return $sce.trustAsHtml(text);
+        };
+}]);

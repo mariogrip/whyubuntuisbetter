@@ -8,15 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Marius Gripsgård">
 
     <title>Why Ubuntu is better</title>
 
 
-
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-    <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
     <link href="css/ubuntu.css" rel="stylesheet">
@@ -54,13 +51,14 @@
                 <div class="navbar-header">
                 </div>
                 <a class="navbar-brand" href="/">
-                    Why is Ubuntu better
+                    Why is Ubuntu better??
                 </a>
                 
 
                 <div class="navbar-collapse navbar-right pull-right">
                    <ul class="nav navbar-nav">
                         <li>
+                   <!--         <a ng-click="edit = !edit">Edit</a> -->
                             <a href="http://github.com/mariogrip/whyubuntuisbetter">Edit this page</a>
                         </li>
                     </ul>
@@ -71,8 +69,12 @@
 
     <div class="container" data-role="content">
         
+        <div class="alert alert-danger">
+  This webpage is under development
+</div>
+        
         <div class="panel panel-default">
-  <div class="panel-heading">Help us share the Awesomeness of Ubuntu to everyone!</div>
+  <div class="panel-heading">Share!</div>
   <div class="panel-body">
       Help us share the Awesomeness of Ubuntu to everyone! we are have started #DoTheSwitch campain, we want <b>YOU</b> to Tweet, Google+ or Facebook. Let everyone you know how good Ubuntu really is! Remeber to include #DoTheSwitch!
       <br>
@@ -89,26 +91,39 @@
 </div>
 
         
-        <h1><center>This is why simply Ubuntu is better!</center></h1><br>
+        <h1><center>This is why Ubuntu <b>is</b> better!</center></h1><br>
 
       <div ng-if="!edit" ng-repeat="items in itemList" class="row">
-        <div ng-repeat="item in items" class="col-md-3">
+        <div ng-repeat="(num, item) in items" class="col-md-3" u-repeat>
           <div class="panel panel-default panels">
-            <div class="panel-body">
-                <h2 class="itemName">{{item.title}}</h2>
+            <div class="panel-body panels">
+                <h2 id="{{num}}h" class="itemName">{{item.title}}</h2>
 
                 <img class="itemImage" ng-if="item.img" ng-src="{{item.img}}" class="img-rounded"/>
-                <p>{{item.text}}</p>
-
+                
+                <div id="{{num}}t" class="ellipsis">
+                    <div>
+                        <p ng-bind-html="item.text | to_trusted"></p>
+                    </div>
+                </div>
             </div>
           </div>
         </div>
       </div>
+        
+        
+        
       <div ng-if="edit" ng-repeat="(nums,items) in itemList" class="row">
         <div ng-repeat="(num, item) in items" class="col-md-3">
-          <div class="panel panel-default">
-            <div class="panel-body"><i style="color: red;" ng-click="removeItem(nums, num);" class="fa fa-times-circle-o fa-lg pull-right"></i><img ng-if="item.img" ng-src="{{item.img}}" class="img-rounded"/>
-              <input value="{{item.title}}"/>
+          <div class="panel panel-default panels">
+            <div class="panel-body"><i style="color: red;" ng-click="removeItem(nums, num);" class="fa fa-times-circle-o fa-lg pull-right"></i>
+                
+                <div class="itemName"><input value="{{item.title}}"/></div>
+                
+                <img ng-if="item.img" ng-src="{{item.img}}" class="img-rounded itemImage"/>
+              
+                <p><textarea cols="20" rows="10">{{item.text}}</textarea></p>
+                
             </div>
           </div>
         </div>
@@ -134,6 +149,7 @@
                 <a href="https://www.digitalocean.com/?refcode=afe991ab278c"><img src="https://www.digitalocean.com/assets/images/logos-badges/png/DO_Proudly_Hosted_Badge_Grey-1652c782.png" width="150" height="40"></a>
             </p>
             <p>This site is maintained by <a href="mailto:me@mariogrip.com">Marius Gripsgård</a> and is not an any way endorsed by or affiliated with <a href="http://ubuntu.com/">Ubuntu</a> or <a href="http://www.canonical.com/">Canonical</a>. <a href="http://ubuntu.com/">Ubuntu</a> and <a href="http://www.canonical.com/">Canonical</a> are registered trademarks of <a href="http://www.canonical.com/">Canonical Ltd.</a></p>
+            <p>This webpage is inspired by <a href="http://whylinuxisbetter.net/">whylinuxisbetter.net</a> </p>
         </center>
     </div>
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
