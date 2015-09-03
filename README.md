@@ -14,6 +14,7 @@ Let's say the items.json file looks like this:
       "title": "Example",
       "text":  "This is an awesome example."
     }
+  ]
 }
 
 ```
@@ -40,6 +41,7 @@ After that, you will need to add that new block into the existing file, the resu
       "title": "Awesome",
       "text": "This is just an awesome test!"
     }
+  ]
 }
 
 ```
