@@ -1,0 +1,56 @@
+        <h1><center>This is why Ubuntu <b>is</b> better!</center></h1><br>
+
+<div ng-if="!edit" ng-repeat="items in itemList" class="row">
+        <div ng-repeat="(num, item) in items" class="col-md-3 col-sm-4" u-repeat>
+          <div class="panel panel-default panels">
+            <div class="panel-body panels">
+                <h2 id="{{num}}h" class="itemName">{{item.title}}</h2>
+
+                <img class="itemImage" ng-if="item.img" ng-src="{{item.img}}" class="img-rounded"/>
+                
+                <div id="{{num}}t" class="ellipsis">
+                    <div>
+                        <p ng-bind-html="item.text | to_trusted"></p>
+                        
+                        Read more >
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+        
+        
+      <div ng-if="edit" ng-repeat="(nums,items) in itemList" class="row">
+        <div ng-repeat="(num, item) in items" class="col-md-3">
+          <div class="panel panel-default panels">
+            <div class="panel-body"><i style="color: red;" ng-click="removeItem(nums, num);" class="fa fa-times-circle-o fa-lg pull-right"></i>
+                
+                <div class="itemName"><input value="{{item.title}}"/></div>
+                
+                <img ng-if="item.img" ng-src="{{item.img}}" class="img-rounded itemImage"/>
+              
+                <p><textarea cols="20" rows="10">{{item.text}}</textarea></p>
+                
+                
+            </div>
+          </div>
+        </div>
+        <div ng-if="hadMoreAtEnd() &amp;&amp; $last" class="col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-body"><i style="color: green;" ng-click="newItem()" class="fa fa-plus-circle fa-lg"></i>
+              <input ng-model="$parent.new.title"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ng-if="edit" class="row">
+        <div ng-if="!hadMoreAtEnd()" class="col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-body"><i style="color: green;" ng-click="newItem()" class="fa fa-plus-circle fa-lg"></i>
+              <input ng-model="new.title"/>
+            </div>
+          </div>
+        </div>
+      </div>

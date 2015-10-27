@@ -1,24 +1,9 @@
-var app = angular.module("wuibApp", []);
+var app = angular.module("wuibApp", ["ngRoute"]);
 
 app.controller("ctrl", ['$scope', '$http', function($scope, $http) {
   $http.get("/items.json").success(function(data){
-    var output = [];
-    var inside = [];
-    var last = 0;
-    data.items.forEach(function(out, num) {
-      inside.push(out);
-      last += 1;
-      if (last >= 4){
-        output.push(angular.copy(inside));
-        inside = [];
-        last = 0;
-      }
-    });
-    if (inside.length !== 0){
-      output.push(angular.copy(inside));
-      last = 0;
-    }
-    $scope.itemList = output;
+
+    $scope.itemList = data;
     $scope.new = {};
     $scope.removeItem = function(nums, num){
       $scope.itemList[nums].splice(num, 1);
@@ -51,3 +36,15 @@ app.filter('to_trusted', ['$sce', function($sce){
             return $sce.trustAsHtml(text);
         };
 }]);
+
+app.config(["$routeProvider",
+           function($routeProvider) {
+            $routeProvider.
+                when("/more/:id", {
+                    templateUrl: "views/more.html",
+                    controller: "moreCtrl"
+            }).
+            otherwise({
+                templateUrl: "views/root.html"
+            })
+           }]);
